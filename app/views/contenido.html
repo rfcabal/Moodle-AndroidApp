@@ -1,0 +1,57 @@
+<div class="row" ng-if="modName === 'resource'"> 
+	<h3>{{name}}</h3>
+	<br>
+	<br>
+	<a class="btn btn-block btn-primary" ng-href="{{linkDownload}}">Descargar</a>
+	<br>
+	<br>
+</div>
+
+<div class="row" ng-if="modName === 'forum'"> 
+
+	Hola soy un foro
+
+</div>
+
+<div class="row" ng-if="modName === 'quiz'"> 
+
+	<div ng-show="showAttemps" ng-repeat="attempt in attempts">
+		Ya existe un intento realizado para este custionario, si deseas ver haz <a ng-href="#!/quiz/revisar/{{attempt.id}}">clic aqui</a>
+		<br>
+		<br>
+			<div>
+				El intento fue desarrollado el <strong>{{attempt.timefinish * 1000 | date: 'dd-MM-yyyy'}}</strong>
+				<br>
+				<br>
+				El estado es:
+				<br>
+				<div ng-if="attempt.state === 'finished'"><strong>Finalizado</strong></div>
+			</div>
+		<br>
+	</div>
+	
+	<div ng-hide="showquiz" ng-show="!showAttemps">
+		Estas a punto de comenzar un nuevo cuestionario, haz click en botón para comenzar.
+		<br>
+		<br>
+		<button type="button" class="btn btn-block btn-primary" ng-click="startquiz()">Comenzar</button>
+		<br>
+		<br>
+	</div>
+
+	
+	<div ng-show="showquiz">
+	
+		<form class="form-horizontal" id="myQuestions" data-watch-for-changes>
+			<div ng-repeat="question in questions | orderBy : 'question.number'" id="{{question.number}}">
+				<div>
+				    <p ng-bind-html="question.html | sanitize"> </p><br /><br />
+				</div>
+			</div> 
+		</form>
+		
+		<button type="button" class="width-35 pull-right btn btn-sm btn-primary" ng-click="submit()">Terminar</button>
+
+	</div>
+
+</div>

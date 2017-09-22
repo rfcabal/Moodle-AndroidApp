@@ -1,0 +1,17 @@
+<div class="row">
+	Bienvenido <strong>{{fullname}}</strong>
+	<br>
+	<br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="text-center">Cursos Disponibles</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="curso in cursos">
+				<td><a ng-href="#!/curso/{{curso.id}}">{{curso.fullname}}</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

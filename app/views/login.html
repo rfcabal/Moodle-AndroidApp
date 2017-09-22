@@ -1,0 +1,31 @@
+ <div class="row">
+ 	<form action="/" name="myLogin">
+		<div class="form-group" style="margin: 50px;">
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">Usuario </span>
+				<input type="text" class="form-control" id="username" ng-model="username" required focus>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">Clave &nbsp;&nbsp; </span>
+				<input type="password" class="form-control" id="password" ng-model="password" required>
+			</div>
+			<br>
+			<br>
+				<button type="button" class="btn btn-sm btn-primary btn-lg btn-block" ng-disabled="myLogin.$invalid" ng-click="login()">
+				Entrar
+				</button>
+		</div>
+	</form>
+ </div>
+
+<!-- ALERTAS -->
+<div class="row">
+
+<div class="alert alert-danger" role="alert" ng-show="failauth">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Usuario y/o contraseña no válidos.
+</div>
+
+</div>

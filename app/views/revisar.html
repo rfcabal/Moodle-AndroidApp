@@ -1,0 +1,16 @@
+<div class="row">
+	<div>
+		Fecha: {{attempt.attempt.timefinish * 1000 | date: 'dd-MM-yyyy'}}
+		<br>
+		NOTA: {{attempt.grade | number: 1}}
+		<br>
+		Estado: <strong ng-if="attempt.attempt.state === 'finished'">Finalizado</strong>
+	</div>
+	<form class="form-horizontal">
+		<div ng-repeat="question in questions | orderBy : 'question.number'" id="{{question.number}}">
+			<div>
+			    <p ng-bind-html="question.html | sanitize"> </p><br /><br />
+			</div>
+		</div> 
+	</form>
+</div>

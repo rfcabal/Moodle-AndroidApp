@@ -1,0 +1,21 @@
+<div class="row">
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="text-center">Contenidos</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="contenido in contenidos">
+				<td>
+					<a href ng-click="showCont()">{{contenido.name}}</a> <br>
+					<ul ng-show="showConte">
+						<li ng-repeat="modulo in contenido.modules">
+							<a ng-href="#!/curso/{{idCurso}}/{{modulo.modname}}/{{modulo.id}}">{{modulo.name}}</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
