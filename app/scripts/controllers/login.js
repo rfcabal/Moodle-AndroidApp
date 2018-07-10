@@ -22,8 +22,6 @@ angular.module('moodleAppApp')
 
   	}
 
-  	//https://comunidaddeaprendizaje.cl/ac-cap/login/token.php?username=adminaccap&password=Ac-cap=2015&service=moodle_mobile_app
-
   	function postCredentials(username, password, callback) {
 
 
